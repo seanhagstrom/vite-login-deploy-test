@@ -1,0 +1,25 @@
+{
+  "name": "grace-shopper",
+  "version": "1.0.0",
+  "description": "A simple boilerplate for the PERN stack using Vite.js. It includes Node-Postgres v8.8, Express, React 18, React Router DOM v6.6, Morgan, Axios, jsonwebtoken, bcrypt, dotenv, and Nodemon. ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server:dev": "nodemon index.js",
+    "start:dev": "(npm run dev --prefix client) & nodemon index.js",
+    "seed": "node db/seed.js"
+  },
+  "author": "Sean Hagstrom",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
