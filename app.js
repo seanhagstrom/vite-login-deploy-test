@@ -10,14 +10,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, './client', 'dist')));
-// app.use('*', () =>
-//   express.static(path.join(__dirname, 'client/dist/index.html'))
-// );
 
 app.use('/api', require('./api'));
 
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, './client', 'dist', 'index.html'));
+  try {
+    res.sendFile(path.join(__dirname, './client/dist', 'index.html'));
+  } catch (error) {
+    next(error);
+  }
 });
 
 app.use((req, res, next) => {
@@ -25,7 +26,7 @@ app.use((req, res, next) => {
     res.status(404).send("Sorry, can't find that! :/");
   } catch (error) {
     console.errror(error);
-    throw error;
+    next(error);
   }
 });
 
