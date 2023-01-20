@@ -10,8 +10,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, './client', 'dist')));
+// app.use('*', () =>
+//   express.static(path.join(__dirname, 'client/dist/index.html'))
+// );
 
 app.use('/api', require('./api'));
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, './client', 'dist', 'index.html'));
+});
 
 app.use((req, res, next) => {
   try {

@@ -33,9 +33,10 @@ function App() {
       </>
       <button onClick={logout}>Logout</button>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route exact path='/' element={<Home />} />
         <Route path='/login' element={Login} />
         <Route path='/signup' element={Signup} />
+        <Route path='*' element={<h1>no route here!</h1>} />
       </Routes>
     </div>
   );

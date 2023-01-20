@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "server:dev": "nodemon index.js",
-    "start:dev": "(npm run dev --prefix client) & nodemon index.js",
+    "start:dev": "(npm run build --prefix client & npm run preview --prefix client) & nodemon index.js",
     "seed": "node db/seed.js"
   },
   "author": "Sean Hagstrom",
