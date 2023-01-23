@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, './client', 'dist')));
 
+// add to make new PR
 app.use('/api', require('./api'));
 
 app.use((req, res, next) => {
