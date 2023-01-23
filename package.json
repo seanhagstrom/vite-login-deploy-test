@@ -4,7 +4,6 @@
   "description": "A simple boilerplate for the PERN stack using Vite.js. It includes Node-Postgres v8.8, Express, React 18, React Router DOM v6.6, Morgan, Axios, jsonwebtoken, bcrypt, dotenv, and Nodemon. ",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run build --prefix client",
     "start": "node index.js",
     "server:dev": "nodemon index.js",
     "start:dev": "(npm run build --prefix client & npm run preview --prefix client) & nodemon index.js",
