@@ -27,7 +27,6 @@ FROM debian:bullseye
 LABEL fly_launch_runtime="nodejs"
 
 COPY --from=builder /root/.volta /root/.volta
-COPY --from=builder /app/client /app/client
 COPY --from=builder /app /app
 
 WORKDIR /app
