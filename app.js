@@ -15,7 +15,7 @@ app.use('/api', require('./api'));
 
 app.use('/', (req, res, next) => {
   try {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'client', 'dist'));
   } catch (error) {
     next(error);
   }
