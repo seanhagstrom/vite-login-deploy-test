@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   try {
     res.status(404).send("Sorry, can't find that! :/");
   } catch (error) {
-    console.errror(error);
+    console.error(error);
     next(error);
   }
 });
